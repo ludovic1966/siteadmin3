@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Siteadmin3 list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for siteadmin3 in siteadmin3s %}
+            <tr>
+                <td><a href="{{ path('siteadmin3_show', { 'id': siteadmin3.id }) }}">{{ siteadmin3.id }}</a></td>
+                <td>{{ siteadmin3.nom }}</td>
+                <td>{{ siteadmin3.image }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('siteadmin3_show', { 'id': siteadmin3.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('siteadmin3_edit', { 'id': siteadmin3.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('siteadmin3_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

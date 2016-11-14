@@ -1,0 +1,24 @@
+siteadmin3_index:
+    path:     /
+    defaults: { _controller: "Siteadmin3Bundle:Siteadmin3:index" }
+    methods:  GET
+
+siteadmin3_show:
+    path:     /{id}/show
+    defaults: { _controller: "Siteadmin3Bundle:Siteadmin3:show" }
+    methods:  GET
+
+siteadmin3_new:
+    path:     /new
+    defaults: { _controller: "Siteadmin3Bundle:Siteadmin3:new" }
+    methods:  [GET, POST]
+
+siteadmin3_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "Siteadmin3Bundle:Siteadmin3:edit" }
+    methods:  [GET, POST]
+
+siteadmin3_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "Siteadmin3Bundle:Siteadmin3:delete" }
+    methods:  DELETE

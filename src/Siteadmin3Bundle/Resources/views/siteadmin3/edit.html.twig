@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Siteadmin3 edit</h1>
+
+    {# commentaire twig
+    {{ form_start(edit_form) }}
+    {{ form_widget(edit_form) }}
+    <input type="submit" value="Edit" />
+    {{ form_end(edit_form) }}#}
+
+
+
+
+<div>
+    <P>************************************************************************</P>
+
+    {{ form_start(edit_form) }}
+
+    {{ form_widget(edit_form.nom, {'attr': {'class': 'form-control'}}) }}
+
+
+    <P>img spyco1</P>
+    {{ form_widget(edit_form.image1) }}
+    {{ form_errors(edit_form.image1) }}
+    <Br>
+    <img src="{{ app.request.basepath }}/uploads/{{ siteadmin3.image1 }}">
+    <Br>
+    <P>{{edit_form.children.file1.vars.label}}
+    {{ form_widget(edit_form.file1) }}
+    {{ form_errors(edit_form.file1) }}</P>
+
+
+    <P>img spyco2</P>
+    {{ form_widget(edit_form.image2, {'attr': {'class': 'form-control'}}) }}
+    {{ form_errors(edit_form.image2) }}
+    <Br>
+    <img src="{{ app.request.basepath }}/uploads/{{ siteadmin3.image2 }}">
+    <Br>
+    <P>{{edit_form.children.file2.vars.label}}
+    {{ form_widget(edit_form.file2) }}
+    {{ form_errors(edit_form.file2) }}</P>
+
+
+    <P>img spyco3</P>
+    {{ form_widget(edit_form.image3, {'attr': {'class': 'form-control'}}) }}
+    {{ form_errors(edit_form.image3) }}
+    <Br>
+    <img src="{{ app.request.basepath }}/uploads/{{ siteadmin3.image3 }}">
+    <Br>
+    <P>{{edit_form.children.file3.vars.label}}
+    {{ form_widget(edit_form.file3) }}
+    {{ form_errors(edit_form.file3) }}</P>
+
+    {{ dump(edit_form.children.file3.vars.label) }}
+    {{ dump(edit_form) }}
+
+
+    {{ form_end(edit_form) }}
+
+    <input type="submit" value="Edit" />
+</div>
+
+
+
+    <ul>
+        <li>
+            <a href="{{ path('siteadmin3_index') }}">Back to the list</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

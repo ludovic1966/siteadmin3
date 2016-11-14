@@ -1,0 +1,30 @@
+Siteadmin3Bundle\Entity\Siteadmin3:
+    type: entity
+    table: null
+    repositoryClass: Siteadmin3Bundle\Repository\Siteadmin3Repository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+        image1:
+            type: string
+            length: 255
+        image2:
+            type: string
+            length: 255
+        image3:
+            type: string
+            length: 255
+
+    lifecycleCallbacks:
+      prePersist: [ preUpload1, preUpload2, preUpload3 ]
+      preUpdate: [ preUpload1, preUpload2, preUpload3 ]
+      postPersist: [ upload1, upload2,upload3  ]
+      postUpdate: [ upload1, upload2,upload3 ]
+      postRemove: [ removeUpload1, removeUpload2,removeUpload3 ]
